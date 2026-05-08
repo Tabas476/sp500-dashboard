@@ -27,13 +27,12 @@ indexes = {
     "NASDAQ": "^IXIC",
     "Russell 2000": "^RUT",
 }
-
 def get_quote(symbol):
-url = f"https://financialmodelingprep.com/stable/quote?symbol={symbol}&apikey={API_KEY}"
+    url = f"https://financialmodelingprep.com/stable/quote?symbol={symbol}&apikey={API_KEY}"
     r = requests.get(url, timeout=20)
     data = r.json()
     return data[0] if data else {}
-
+    
 def get_etf_holdings(symbol):
     url = f"https://financialmodelingprep.com/api/v3/etf-holder/{symbol}?apikey={API_KEY}"
     r = requests.get(url, timeout=20)
