@@ -58,8 +58,8 @@ for i, (name, ticker) in enumerate(indexes.items()):
             value=f"{q.get('price', 'N/A')}",
             delta=f"{round(change,2)}%"
         )
-    except:
-        cols[i].metric(label=name, value="Error")
+    except Exception as e:
+        cols[i].metric(label=name, value=str(e))
 
 st.divider()
 
