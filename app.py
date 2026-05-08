@@ -23,9 +23,9 @@ sector_etfs = {
 }
 
 indexes = {
-    "S&P 500": "^GSPC",
-    "NASDAQ": "^IXIC",
-    "Russell 2000": "^RUT",
+    "S&P 500": "SPY",
+    "NASDAQ": "QQQ",
+    "Russell 2000": "IWM",
 }
 def get_quote(symbol):
     url = f"https://financialmodelingprep.com/api/v3/quote?symbol={symbol}&apikey={API_KEY}"
