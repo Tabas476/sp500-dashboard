@@ -52,6 +52,7 @@ cols = st.columns(3)
 for i, (name, ticker) in enumerate(indexes.items()):
     try:
         q = get_quote(ticker)
+        st.write(q)
         change = q.get("changesPercentage", 0)
         cols[i].metric(
             label=name,
