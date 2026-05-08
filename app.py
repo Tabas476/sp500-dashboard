@@ -28,13 +28,13 @@ indexes = {
     "Russell 2000": "IWM",
 }
 def get_quote(symbol):
-    url = f"https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey={API_KEY}"
+    url = f"https://financialmodelingprep.com/stable/quote?symbol={symbol}&apikey={API_KEY}"
     r = requests.get(url, timeout=20)
     data = r.json()
     return data[0] if isinstance(data, list) and len(data) > 0 else data
     
 def get_etf_holdings(symbol):
-    url = f"https://financialmodelingprep.com/api/v3/etf-holder/{symbol}?apikey={API_KEY}"
+    url = f"https://financialmodelingprep.com/stable/etf-holder?symbol={symbol}&apikey={API_KEY}"
     r = requests.get(url, timeout=20)
     return r.json()[:5]
 
