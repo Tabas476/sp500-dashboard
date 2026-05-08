@@ -87,7 +87,8 @@ sort_option = st.selectbox(
     ["Cambio %", "Precio", "Market Cap"]
 )
 
-df = df.sort_values(by=sort_option, ascending=False)
+if sort_option in df.columns:
+    df = df.sort_values(by=sort_option, ascending=False)
 
 st.dataframe(df, use_container_width=True)
 
